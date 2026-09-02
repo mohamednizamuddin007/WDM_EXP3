@@ -38,23 +38,50 @@ for each wear category.</p>
 <p align="justify">
 8. Visulaize the sequence patterns using matplotlib.
 </p>
+
 ### Program:
 
 ```python
 from collections import defaultdict
 from itertools import combinations
 # Function to generate candidate k-item sequences
+
+
 def generate_candidates(dataset, k):
+    counts = defaultdict(int)
+
+    for sequence in dataset:
+        candidates = set(combinations(sequence, k))
+
+        for candidate in candidates:
+            counts[candidate] += 1
+
+    return counts
 
 
-    /WRITE YOUR CODE HERE/
-
-
-#Function to perform GSP algorithm
 def gsp(dataset, min_support):
+    frequent_patterns = {}
+    k = 1
+
+    while True:
+        candidates = generate_candidates(dataset, k)
+
+        frequent_k = {
+            pattern: support
+            for pattern, support in candidates.items()
+            if support >= min_support
+        }
+
+        if not frequent_k:
+            break
+
+        frequent_patterns.update(frequent_k)
+        k += 1
+
+    return frequent_patterns
 
 
-  /WRITE YOUR CODE HERE/
+
 
 
 #Example dataset for each category
