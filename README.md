@@ -102,6 +102,7 @@ else:
  print("No frequent sequential patterns found in Party Wear.")
 ```
 ### Output:
+<img width="641" height="348" alt="image" src="https://github.com/user-attachments/assets/a0710b20-32c8-4b18-9ba7-baeaa23c5046" />
 
 ### Visualization:
 ```python
@@ -131,5 +132,7 @@ visualize_patterns_line(party_wear_result, 'Party Wear')
 ```
 ### Output:
 
+<img width="641" height="774" alt="image" src="https://github.com/user-attachments/assets/0f7d1531-72df-4552-86b9-9d2dce7a799d" />
 
 ### Result:
+The Generalized Sequential Pattern (GSP) algorithm is used to discover frequent sequential patterns from large sequence databases by generating candidate sequences and checking their support count against a minimum threshold.
